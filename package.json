@@ -1,0 +1,31 @@
+{
+    "name": "semi-material-theme",
+    "displayName": "Semi Material Theme",
+    "description": "A modified and updated Material Theme",
+    "version": "0.1.2",
+    "publisher": "AndrewDevels",
+    "engines": {
+        "vscode": "^0.10.10"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "galleryBanner": {
+        "color": "#263238",
+        "theme": "dark"
+    },
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/markupcode/semi-material-theme"
+	},
+    "icon": "icon.png",
+    "contributes": {
+        "themes": [
+            {
+                "label": "Semi Material",
+                "uiTheme": "vs-dark",
+                "path": "./themes/SemiMaterial.json"
+            }
+        ]
+    }
+}
