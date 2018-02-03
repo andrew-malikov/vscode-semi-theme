@@ -3,9 +3,9 @@
     "displayName": "Semi Material Theme",
     "description": "A modified and updated Material Theme",
     "version": "0.1.2",
-    "publisher": "AndrewDevels",
+    "publisher": "markupCode",
     "engines": {
-        "vscode": "^0.10.10"
+        "vscode": "^1.15.0"
     },
     "categories": [
         "Themes"
