@@ -1,125 +1,125 @@
 const { syntaxTemplate } = require('./moduleMetadata');
-const colors = require('./colors');
+const { ansiColors, baseSyntaxColors, baseUIColors } = require('./colors');
 
 const global = {
   items: [
     {
       name: 'Global settings',
       settings: {
-        background: null,
-        foreground: null,
+        background: baseUIColors.neutralBackground.toHexString(),
+        foreground: baseUIColors.neutralForeground.toHexString(),
       },
     },
     {
       name: 'String',
       scope: 'string',
       settings: {
-        foreground: null,
+        foreground: ansiColors.green.toHexString(),
       },
     },
     {
       name: 'Boolean',
       scope: 'constant.language.boolean',
       settings: {
-        foreground: null,
+        foreground: ansiColors.magenta.toHexString(),
       },
     },
     {
       name: 'Number',
       scope: 'constant.numeric',
       settings: {
-        foreground: null,
+        foreground: ansiColors.magenta.toHexString(),
       },
     },
     {
       name: 'Identifier',
       scope: 'variable, support.variable, support.class, support.constant, meta.definition.variable entity.name.function',
       settings: {
-        foreground: null,
+        foreground: ansiColors.red.toHexString(),
       },
     },
     {
       name: 'Keyword',
       scope: 'keyword, modifier, variable.language.this, support.type.object, constant.language',
       settings: {
-        foreground: null,
+        foreground: ansiColors.blue.toHexString(),
       },
     },
     {
       name: 'Function call',
       scope: 'entity.name.function, support.function',
       settings: {
-        foreground: null,
+        foreground: ansiColors.blue.toHexString(),
       },
     },
     {
       name: 'Storage',
       scope: 'storage.type, storage.modifier',
       settings: {
-        foreground: null,
+        foreground: baseSyntaxColors.yellow.toHexString(),
       },
     },
     {
       name: 'Modules',
       scope: 'support.module, support.node',
       settings: {
-        foreground: null,
+        foreground: ansiColors.blue.toHexString(),
       },
     },
     {
       name: 'Type',
       scope: 'support.type',
       settings: {
-        foreground: null,
+        foreground: ansiColors.cyan.toHexString(),
       },
     },
     {
       name: 'Type',
       scope: 'entity.name.type, entity.other.inherited-class',
       settings: {
-        foreground: null,
+        foreground: baseSyntaxColors.yellow.toHexString(),
       },
     },
     {
       name: 'Comment',
       scope: 'comment',
       settings: {
-        foreground: null,
+        foreground: baseSyntaxColors.neutralCyan.toHexString(),
       },
     },
     {
       name: 'Class',
       scope: 'entity.name.type.class',
       settings: {
-        foreground: null,
+        foreground: baseSyntaxColors.yellow.toHexString(),
       },
     },
     {
       name: 'Class variable',
       scope: 'variable.object.property',
       settings: {
-        foreground: null,
+        foreground: ansiColors.green.toHexString(),
       },
     },
     {
       name: 'Class method',
       scope: 'meta.definition.method entity.name.function',
       settings: {
-        foreground: null,
+        foreground: baseSyntaxColors.yellow.toHexString(),
       },
     },
     {
       name: 'Function definition',
       scope: 'meta.function entity.name.function',
       settings: {
-        foreground: null,
+        foreground: baseSyntaxColors.brightViolet.toHexString(),
       },
     },
     {
       name: 'Template expression',
       scope: 'template.expression.begin, template.expression.end',
       settings: {
-        foreground: null,
+        foreground: ansiColors.green.toHexString(),
       },
     },
   ],
@@ -131,14 +131,14 @@ const json = {
     name: 'JSON key',
     scope: 'meta.object-literal.key, meta.object-literal.key string, support.type.property-name.json',
     settings: {
-      foreground: null,
+      foreground: baseSyntaxColors.cyan.toHexString(),
     },
   },
   {
     name: 'JSON constant',
     scope: 'constant.language.json',
     settings: {
-      foreground: null,
+      foreground: baseSyntaxColors.darkCyan.toHexString(),
     },
   }],
   __proto__: syntaxTemplate,
@@ -149,21 +149,21 @@ const css = {
     name: 'CSS class',
     scope: 'entity.other.attribute-name.class',
     settings: {
-      foreground: null,
+      foreground: baseSyntaxColors.yellow.toHexString(),
     },
   },
   {
     name: 'CSS ID',
     scope: 'entity.other.attribute-name.id',
     settings: {
-      foreground: null,
+      foreground: baseSyntaxColors.yellow.toHexString(),
     },
   },
   {
     name: 'CSS tag',
     scope: 'source.css entity.name.tag',
     settings: {
-      foreground: null,
+      foreground: ansiColors.red.toHexString(),
     },
   }],
   __proto__: syntaxTemplate,
@@ -174,21 +174,21 @@ const html = {
     name: 'HTML tag outer',
     scope: 'meta.tag, punctuation.definition.tag',
     settings: {
-      foreground: null,
+      foreground: ansiColors.white.toHexString(),
     },
   },
   {
     name: 'HTML tag inner',
     scope: 'entity.name.tag',
     settings: {
-      foreground: null,
+      foreground: ansiColors.red.toHexString(),
     },
   },
   {
     name: 'HTML tag attribute',
     scope: 'entity.other.attribute-name',
     settings: {
-      foreground: null,
+      foreground: baseSyntaxColors.yellow.toHexString(),
     },
   }],
   __proto__: syntaxTemplate,
@@ -199,35 +199,35 @@ const markdown = {
     name: 'Markdown heading',
     scope: 'markup.heading',
     settings: {
-      foreground: null,
+      foreground: ansiColors.white.toHexString(),
     },
   },
   {
     name: 'Markdown link text',
     scope: 'text.html.markdown meta.link.inline, meta.link.reference',
     settings: {
-      foreground: null,
+      foreground: ansiColors.white.toHexString(),
     },
   },
   {
     name: 'Markdown block quote',
     scope: 'text.html.markdown markup.quote',
     settings: {
-      foreground: null,
+      foreground: baseSyntaxColors.yellow.toHexString(),
     },
   },
   {
     name: 'Markdown list item',
     scope: 'text.html.markdown beginning.punctuation.definition.list',
     settings: {
-      foreground: null,
+      foreground: ansiColors.green.toHexString(),
     },
   },
   {
     name: 'Markdown italic',
     scope: 'markup.italic',
     settings: {
-      foreground: null,
+      foreground: ansiColors.green.toHexString(),
       fontStyle: 'italic',
     },
   },
@@ -235,7 +235,7 @@ const markdown = {
     name: 'Markdown bold',
     scope: 'markup.bold',
     settings: {
-      foreground: null,
+      foreground: ansiColors.green.toHexString(),
       fontStyle: 'bold',
     },
   },
@@ -243,7 +243,7 @@ const markdown = {
     name: 'Markdown bold italic',
     scope: 'markup.bold markup.italic, markup.italic markup.bold',
     settings: {
-      foreground: null,
+      foreground: ansiColors.green.toHexString(),
       fontStyle: 'italic bold',
     },
   }],
