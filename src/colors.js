@@ -2,6 +2,7 @@ const color = require('tinycolor2');
 
 const baseUIColors = {
   neutralBackground: color('#1C282D'),
+  darkNeutralBackground: color('#1E2529'),
   darkBackground: color('#14191E'),
   blackBackground: color('#0A0F14'),
   neutralForeground: color('#D6D8D9'),

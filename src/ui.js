@@ -1,30 +1,30 @@
 const { uiTemplate } = require('./moduleMetadata');
-const colors = require('./colors');
+const { ansiColors, baseUIColors, additionalUIColors } = require('./colors');
 
 const terminalColors = {
-  'terminal.background': null,
-  'terminal.foreground': null,
-  'terminal.ansiBrightBlack': null,
-  'terminal.ansiBrightRed': null,
-  'terminal.ansiBrightGreen': null,
-  'terminal.ansiBrightYellow': null,
-  'terminal.ansiBrightBlue': null,
-  'terminal.ansiBrightMagenta': null,
-  'terminal.ansiBrightCyan': null,
-  'terminal.ansiBrightWhite': null,
-  'terminal.ansiBlack': null,
-  'terminal.ansiRed': null,
-  'terminal.ansiGreen': null,
-  'terminal.ansiYellow': null,
-  'terminal.ansiBlue': null,
-  'terminal.ansiMagenta': null,
-  'terminal.ansiCyan': null,
-  'terminal.ansiWhite': null,
+  'terminal.background': baseUIColors.darkNeutralBackground.clone().darken(2).toHexString(),
+  'terminal.foreground': baseUIColors.neutralForeground.toHexString(),
+  'terminal.ansiBrightBlack': ansiColors.brightBlack.toHexString(),
+  'terminal.ansiBrightRed': ansiColors.brightRed.toHexString(),
+  'terminal.ansiBrightGreen': ansiColors.brightGreen.toHexString(),
+  'terminal.ansiBrightYellow': ansiColors.brightYellow.toHexString(),
+  'terminal.ansiBrightBlue': ansiColors.brightBlue.toHexString(),
+  'terminal.ansiBrightMagenta': ansiColors.brightMagenta.toHexString(),
+  'terminal.ansiBrightCyan': ansiColors.brightCyan.toHexString(),
+  'terminal.ansiBrightWhite': ansiColors.brightWhite.toHexString(),
+  'terminal.ansiBlack': ansiColors.black.toHexString(),
+  'terminal.ansiRed': ansiColors.red.toHexString(),
+  'terminal.ansiGreen': ansiColors.green.toHexString(),
+  'terminal.ansiYellow': ansiColors.yellow.toHexString(),
+  'terminal.ansiBlue': ansiColors.blue.toHexString(),
+  'terminal.ansiMagenta': ansiColors.magenta.toHexString(),
+  'terminal.ansiCyan': ansiColors.cyan.toHexString(),
+  'terminal.ansiWhite': ansiColors.white.toHexString(),
   __proto__: uiTemplate,
 };
 
 const contrastColors = {
-  contrastBorder: null,
+  contrastBorder: baseUIColors.darkBackground.toHexString(),
   contrastActiveBorder: null,
   __proto__: uiTemplate,
 };
@@ -87,13 +87,13 @@ const progressBar = {
 };
 
 const listControll = {
-  'list.activeSelectionBackground': null,
+  'list.activeSelectionBackground': additionalUIColors.neutralGray.clone().darken(1).toHexString(),
   'list.activeSelectionForeground': null,
   'list.dropBackground': null,
   'list.focusBackground': null,
   'list.highlightForeground': null,
-  'list.hoverBackground': null,
-  'list.inactiveSelectionBackground': null,
+  'list.hoverBackground': baseUIColors.neutralBackground.clone().brighten(3).toHexString(),
+  'list.inactiveSelectionBackground': baseUIColors.neutralBackground.toHexString(),
   'list.inactiveSelectionForeground': null,
   'list.hoverForeground': null,
   'list.focusForeground': null,
@@ -101,7 +101,7 @@ const listControll = {
 };
 
 const activityBar = {
-  'activityBar.background': null,
+  'activityBar.background': baseUIColors.darkBackground.clone().darken(1).toHexString(),
   'activityBar.dropBackground': null,
   'activityBar.foreground': null,
   'activityBar.border': null,
@@ -111,11 +111,11 @@ const activityBar = {
 };
 
 const sideBar = {
-  'sideBar.background': null,
+  'sideBar.background': baseUIColors.darkBackground.toHexString(),
   'sideBar.foreground': null,
   'sideBar.border': null,
   'sideBarTitle.foreground': null,
-  'sideBarSectionHeader.background': null,
+  'sideBarSectionHeader.background': baseUIColors.darkBackground.clone().brighten(4).toHexString(),
   'sideBarSectionHeader.foreground': null,
   __proto__: uiTemplate,
 };
@@ -125,14 +125,14 @@ const editorGroupsAndTabs = {
   'editorGroup.border': null,
   'editorGroup.dropBackground': null,
   'editorGroupHeader.noTabsBackground': null,
-  'editorGroupHeader.tabsBackground': null,
+  'editorGroupHeader.tabsBackground': baseUIColors.darkBackground.toHexString(),
   'editorGroupHeader.tabsBorder': null,
   'tab.activeBackground': null,
   'tab.activeForeground': null,
-  'tab.border': null,
+  'tab.border': baseUIColors.darkBackground.toHexString(),
   'tab.activeBorder': null,
   'tab.unfocusedActiveBorder': null,
-  'tab.inactiveBackground': null,
+  'tab.inactiveBackground': baseUIColors.darkBackground.toHexString(),
   'tab.inactiveForeground': null,
   'tab.unfocusedActiveForeground': null,
   'tab.unfocusedInactiveForeground': null,
@@ -141,7 +141,7 @@ const editorGroupsAndTabs = {
 
 const editorColors = {
   'editor.foreground': null,
-  'editor.background': null,
+  'editor.background': baseUIColors.darkNeutralBackground.toHexString(),
   'editorLineNumber.foreground': null,
   'editorCursor.foreground': null,
   'editor.selectionBackground': null,
@@ -259,7 +259,7 @@ const panelColors = {
 };
 
 const statusBarColors = {
-  'statusBar.background': null,
+  'statusBar.background': baseUIColors.darkBackground.toHexString(),
   'statusBar.foreground': null,
   'statusBar.debuggingBackground': null,
   'statusBar.debuggingForeground': null,
