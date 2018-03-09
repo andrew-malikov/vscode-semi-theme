@@ -7,6 +7,7 @@ const ui = require('./ui');
 function getAllModules() {
   return [
     header,
+    syntax.python,
     syntax.global,
     syntax.css,
     syntax.html,

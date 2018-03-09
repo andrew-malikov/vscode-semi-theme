@@ -34,6 +34,7 @@ const ansiColors = {
 };
 
 const baseSyntaxColors = {
+  indigo: color('#9281fa').darken(2),
   brightViolet: color('#BD8BDF'),
   yellow: color('#FFCB6B'),
   cyan: color('#40c4ff'),

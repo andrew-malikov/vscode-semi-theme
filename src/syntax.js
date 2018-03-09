@@ -7,7 +7,7 @@ const global = {
       name: 'Global settings',
       settings: {
         background: baseUIColors.neutralBackground.toHexString(),
-        foreground: baseUIColors.neutralForeground.toHexString(),
+        foreground: baseUIColors.lightForeground.toHexString(),
       },
     },
     {
@@ -33,14 +33,16 @@ const global = {
     },
     {
       name: 'Identifier',
-      scope: 'variable, support.variable, support.class, support.constant, meta.definition.variable entity.name.function',
+      scope:
+        'variable, support.variable, support.class, support.constant, meta.definition.variable entity.name.function',
       settings: {
         foreground: ansiColors.red.toHexString(),
       },
     },
     {
       name: 'Keyword',
-      scope: 'keyword, modifier, variable.language.this, support.type.object, constant.language',
+      scope:
+        'keyword, modifier, variable.language.this, support.type.object, constant.language',
       settings: {
         foreground: ansiColors.blue.toHexString(),
       },
@@ -70,7 +72,7 @@ const global = {
       name: 'Type',
       scope: 'support.type',
       settings: {
-        foreground: ansiColors.cyan.toHexString(),
+        foreground: baseSyntaxColors.cyan.toHexString(),
       },
     },
     {
@@ -127,126 +129,196 @@ const global = {
 };
 
 const json = {
-  items: [{
-    name: 'JSON key',
-    scope: 'meta.object-literal.key, meta.object-literal.key string, support.type.property-name.json',
-    settings: {
-      foreground: baseSyntaxColors.cyan.toHexString(),
+  items: [
+    {
+      name: 'JSON key',
+      scope:
+        'meta.object-literal.key, meta.object-literal.key string, support.type.property-name.json',
+      settings: {
+        foreground: baseSyntaxColors.cyan.toHexString(),
+      },
     },
-  },
-  {
-    name: 'JSON constant',
-    scope: 'constant.language.json',
-    settings: {
-      foreground: baseSyntaxColors.darkCyan.toHexString(),
+    {
+      name: 'JSON constant',
+      scope: 'constant.language.json',
+      settings: {
+        foreground: baseSyntaxColors.darkCyan.toHexString(),
+      },
     },
-  }],
+  ],
   __proto__: syntaxTemplate,
 };
 
 const css = {
-  items: [{
-    name: 'CSS class',
-    scope: 'entity.other.attribute-name.class',
-    settings: {
-      foreground: baseSyntaxColors.yellow.toHexString(),
+  items: [
+    {
+      name: 'CSS class',
+      scope: 'entity.other.attribute-name.class',
+      settings: {
+        foreground: baseSyntaxColors.yellow.toHexString(),
+      },
     },
-  },
-  {
-    name: 'CSS ID',
-    scope: 'entity.other.attribute-name.id',
-    settings: {
-      foreground: baseSyntaxColors.yellow.toHexString(),
+    {
+      name: 'CSS ID',
+      scope: 'entity.other.attribute-name.id',
+      settings: {
+        foreground: baseSyntaxColors.yellow.toHexString(),
+      },
     },
-  },
-  {
-    name: 'CSS tag',
-    scope: 'source.css entity.name.tag',
-    settings: {
-      foreground: ansiColors.red.toHexString(),
+    {
+      name: 'CSS tag',
+      scope: 'source.css entity.name.tag',
+      settings: {
+        foreground: ansiColors.red.toHexString(),
+      },
     },
-  }],
+  ],
   __proto__: syntaxTemplate,
 };
 
 const html = {
-  items: [{
-    name: 'HTML tag outer',
-    scope: 'meta.tag, punctuation.definition.tag',
-    settings: {
-      foreground: ansiColors.white.toHexString(),
+  items: [
+    {
+      name: 'HTML tag outer',
+      scope: 'meta.tag, punctuation.definition.tag',
+      settings: {
+        foreground: ansiColors.white.toHexString(),
+      },
     },
-  },
-  {
-    name: 'HTML tag inner',
-    scope: 'entity.name.tag',
-    settings: {
-      foreground: ansiColors.red.toHexString(),
+    {
+      name: 'HTML tag inner',
+      scope: 'entity.name.tag',
+      settings: {
+        foreground: ansiColors.red.toHexString(),
+      },
     },
-  },
-  {
-    name: 'HTML tag attribute',
-    scope: 'entity.other.attribute-name',
-    settings: {
-      foreground: baseSyntaxColors.yellow.toHexString(),
+    {
+      name: 'HTML tag attribute',
+      scope: 'entity.other.attribute-name',
+      settings: {
+        foreground: baseSyntaxColors.yellow.toHexString(),
+      },
     },
-  }],
+  ],
   __proto__: syntaxTemplate,
 };
 
 const markdown = {
-  items: [{
-    name: 'Markdown heading',
-    scope: 'markup.heading',
-    settings: {
-      foreground: ansiColors.white.toHexString(),
+  items: [
+    {
+      name: 'Markdown heading',
+      scope: 'markup.heading',
+      settings: {
+        foreground: ansiColors.white.toHexString(),
+      },
     },
-  },
-  {
-    name: 'Markdown link text',
-    scope: 'text.html.markdown meta.link.inline, meta.link.reference',
-    settings: {
-      foreground: ansiColors.white.toHexString(),
+    {
+      name: 'Markdown link text',
+      scope: 'text.html.markdown meta.link.inline, meta.link.reference',
+      settings: {
+        foreground: ansiColors.white.toHexString(),
+      },
     },
-  },
-  {
-    name: 'Markdown block quote',
-    scope: 'text.html.markdown markup.quote',
-    settings: {
-      foreground: baseSyntaxColors.yellow.toHexString(),
+    {
+      name: 'Markdown block quote',
+      scope: 'text.html.markdown markup.quote',
+      settings: {
+        foreground: baseSyntaxColors.yellow.toHexString(),
+      },
     },
-  },
-  {
-    name: 'Markdown list item',
-    scope: 'text.html.markdown beginning.punctuation.definition.list',
-    settings: {
-      foreground: ansiColors.green.toHexString(),
+    {
+      name: 'Markdown list item',
+      scope: 'text.html.markdown beginning.punctuation.definition.list',
+      settings: {
+        foreground: ansiColors.green.toHexString(),
+      },
     },
-  },
-  {
-    name: 'Markdown italic',
-    scope: 'markup.italic',
-    settings: {
-      foreground: ansiColors.green.toHexString(),
-      fontStyle: 'italic',
+    {
+      name: 'Markdown italic',
+      scope: 'markup.italic',
+      settings: {
+        foreground: ansiColors.green.toHexString(),
+        fontStyle: 'italic',
+      },
     },
-  },
-  {
-    name: 'Markdown bold',
-    scope: 'markup.bold',
-    settings: {
-      foreground: ansiColors.green.toHexString(),
-      fontStyle: 'bold',
+    {
+      name: 'Markdown bold',
+      scope: 'markup.bold',
+      settings: {
+        foreground: ansiColors.green.toHexString(),
+        fontStyle: 'bold',
+      },
     },
-  },
-  {
-    name: 'Markdown bold italic',
-    scope: 'markup.bold markup.italic, markup.italic markup.bold',
-    settings: {
-      foreground: ansiColors.green.toHexString(),
-      fontStyle: 'italic bold',
+    {
+      name: 'Markdown bold italic',
+      scope: 'markup.bold markup.italic, markup.italic markup.bold',
+      settings: {
+        foreground: ansiColors.green.toHexString(),
+        fontStyle: 'italic bold',
+      },
     },
-  }],
+  ],
+  __proto__: syntaxTemplate,
+};
+
+const python = {
+  items: [
+    {
+      name: 'Python function argument type',
+      scope: 'meta.function.parameters.python',
+      settings: {
+        foreground: baseSyntaxColors.cyan.toHexString(),
+      },
+    },
+    {
+      name: 'Python function',
+      scope: 'entity.name.function.python',
+      settings: {
+        foreground: ansiColors.blue.clone().brighten(10).toHexString(),
+      },
+    },
+    {
+      name: 'Python self',
+      scope: [
+        'variable.parameter.function.language.special.self.python',
+        'variable.language.special.self.python',
+      ],
+      settings: {
+        foreground: ansiColors.green.toHexString(),
+      },
+    },
+    {
+      name: 'Python decorator begin',
+      scope: 'entity.name.function.decorator.python',
+      settings: {
+        foreground: ansiColors.green.toHexString(),
+      },
+    },
+    {
+      name: 'Python decorator',
+      scope: 'meta.function.decorator.python',
+      settings: {
+        foreground: ansiColors.green.toHexString(),
+      },
+    },
+    {
+      name: 'Python separator dot',
+      scope: 'punctuation.separator.period.python',
+      settings: {
+        foreground: ansiColors.white.clone().darken(20).toHexString(),
+      },
+    },
+    {
+      name: 'Python braces',
+      scope: [
+        'punctuation.definition.arguments.begin.python',
+        'punctuation.definition.arguments.end.python',
+      ],
+      settings: {
+        foreground: ansiColors.white.clone().darken(20).toHexString(),
+      },
+    },
+  ],
   __proto__: syntaxTemplate,
 };
 
@@ -255,3 +327,4 @@ exports.json = json;
 exports.css = css;
 exports.html = html;
 exports.markdown = markdown;
+exports.python = python;
