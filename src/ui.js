@@ -68,7 +68,7 @@ const inputControl = {
 };
 
 const scrollBarControll = {
-  'scrollbar.shadow': null,
+  'scrollbar.shadow': baseUIColors.darkBackground.toHexString(),
   'scrollbarSlider.activeBackground': null,
   'scrollbarSlider.background': null,
   'scrollbarSlider.hoverBackground': null,
@@ -154,7 +154,7 @@ const editorColors = {
   'editor.findRangeHighlightBackground': null,
   'editor.hoverHighlightBackground': null,
   'editor.lineHighlightBackground': null,
-  'editor.lineHighlightBorder': null,
+  'editor.lineHighlightBorder': additionalUIColors.neutralGray.toHexString(),
   'editorLink.activeForeground': null,
   'editor.rangeHighlightBackground': null,
   'editorWhitespace.foreground': null,
@@ -163,7 +163,7 @@ const editorColors = {
   'editorCodeLens.foreground': null,
   'editorBracketMatch.background': null,
   'editorBracketMatch.border': null,
-  'editorOverviewRuler.border': null,
+  'editorOverviewRuler.border': baseUIColors.darkBackground.toHexString(),
   'editorOverviewRuler.findMatchForeground': null,
   'editorOverviewRuler.rangeHighlightForeground': null,
   'editorOverviewRuler.selectionHighlightForeground': null,
@@ -251,7 +251,7 @@ const mergeConflicts = {
 
 const panelColors = {
   'panel.background': null,
-  'panel.border': null,
+  'panel.border': baseUIColors.darkBackground.toHexString(),
   'panelTitle.activeBorder': null,
   'panelTitle.activeForeground': null,
   'panelTitle.inactiveForeground': null,
