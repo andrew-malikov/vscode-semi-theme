@@ -1,7 +1,7 @@
-import UiColors from "./uiColors";
 import Color from "../color";
 import ShadeGenerator from "../utils/shadeGenerator";
 import UtilsManager from "../utils/utilsManager";
+import UiColors from "./uiColors";
 
 function getSemiUi() {
   const colors: UiColors = {
