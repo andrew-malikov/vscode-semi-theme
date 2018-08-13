@@ -1,43 +1,21 @@
 {
-    "name": "semi-material-theme",
-    "displayName": "Semi Material Theme",
-    "description": "A modified and updated Material Theme",
-    "version": "0.1.2",
-    "publisher": "markupCode",
-    "license": "MIT",
-    "scripts": {
-        "build": "node build.js"
-    },
-    "engines": {
-        "vscode": "^1.15.0"
-    },
-    "categories": [
-        "Themes"
-    ],
-    "galleryBanner": {
-        "color": "#263238",
-        "theme": "dark"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/markupcode/semi-material-theme"
-    },
-    "icon": "icon.png",
-    "contributes": {
-        "themes": [
-            {
-                "label": "Semi Material",
-                "uiTheme": "vs-dark",
-                "path": "./themes/SemiMaterial.json"
-            }
-        ]
-    },
-    "dependencies": {
-        "tinycolor2": "^1.4.1"
-    },
-    "devDependencies": {
-        "eslint": "^4.18.1",
-        "eslint-config-airbnb-base": "^12.1.0",
-        "eslint-plugin-import": "^2.9.0"
-    }
+  "name": "semi-theme-builder",
+  "displayName": "Semi Theme Builder",
+  "description": "Simple Builder for Semi",
+  "version": "0.2.0",
+  "publisher": "markupCode",
+  "license": "MIT",
+  "scripts": {},
+  "engines": {
+    "vscode": "^1.15.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markupcode/semi-material-theme"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }
