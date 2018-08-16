@@ -9,11 +9,15 @@ export default class UiColors implements ColorPalette {
 
   public toMap(): Map<string, Color> {
     const colors = new Map<string, Color>();
-    const object = this as any;
+    const self = this as any;
 
-    for (const key in object)
-      if (typeof object[key] === typeof object) colors.set(key, object[key]);
+    for (const key in self)
+      if (typeof self[key] === typeof self) colors.set(key, self[key]);
 
     return colors;
+  }
+
+  public hasColor(key: string): boolean {
+    return (this as object).hasOwnProperty(key);
   }
 }

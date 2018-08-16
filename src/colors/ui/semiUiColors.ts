@@ -1,20 +1,21 @@
 import Color from "../color";
+import ColorsBuilder from "../colorsBuilder";
+import objToMap from "../mappers/objToMap";
 import ShadeGenerator from "../utils/shadeGenerator";
 import UtilsManager from "../utils/utilsManager";
 import UiColors from "./uiColors";
 
-export class SemiUiColorBuilder {
+export class SemiUiColorsBuilder implements ColorsBuilder<UiColors> {
   private colors: UiColors;
 
   constructor() {
     this.reset();
   }
 
-  public setupColors(): this {
-    this.colors.background = new Color("#1C282D");
-    this.colors.foreground = new Color("#D6D8D9");
-    this.colors.accent = new Color("#C62D42");
-    this.colors.border = new Color("#1A2226");
+  public setupColors(source: Map<string, Color>): this {
+    source.forEach((value, key) => {
+      if (this.colors.hasColor(key)) source[key] = value;
+    });
 
     return this.endState();
   }
@@ -47,9 +48,16 @@ export class SemiUiColorBuilder {
   }
 }
 
-const builder = new SemiUiColorBuilder();
+const plainPalette = {
+  accent: new Color("#C62D42"),
+  background: new Color("#1C282D"),
+  border: new Color("#1A2226"),
+  foreground: new Color("#D6D8D9")
+};
+
+const builder = new SemiUiColorsBuilder();
 
 export const semiUi = builder
-  .setupColors()
+  .setupColors(objToMap(plainPalette))
   .updateColors()
   .build();
