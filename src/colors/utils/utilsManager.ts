@@ -1,5 +1,5 @@
-import ColorUtils from "./colorUtils";
 import Color from "../color";
+import ColorUtils from "./colorUtils";
 
 export default class UtilsManager {
   private _utils: ColorUtils[];

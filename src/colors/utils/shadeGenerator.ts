@@ -1,5 +1,6 @@
 import Color from "../color";
 import ColorUtils from "./colorUtils";
+import ShadeOptions from "./shadeOptions";
 
 export default class ShadeGenerator implements ColorUtils {
   private options: Map<string, ShadeOptions>;
@@ -9,9 +10,7 @@ export default class ShadeGenerator implements ColorUtils {
   }
 
   constructor(amount?: number, options?: Map<string, ShadeOptions>) {
-    if (!options) {
-      options = this.getDefaultOptions(amount);
-    }
+    if (!options) options = this.getDefaultOptions(amount);
 
     this.options = options;
   }
@@ -42,31 +41,9 @@ export default class ShadeGenerator implements ColorUtils {
       color.add("dark", color.base.clone().darken(options.amount));
   }
 
-  private getDefaultOptions(amout?: number) {
+  private getDefaultOptions(amount?: number) {
     const options = new Map<string, ShadeOptions>();
-    options.set("all", new ShadeOptions(amout));
+    options.set("all", new ShadeOptions(amount));
     return options;
-  }
-}
-
-export class ShadeOptions {
-  public amount?: number;
-  public hasDark: boolean;
-  public hasLight: boolean;
-
-  constructor(amount?: number) {
-    this.amount = amount;
-    this.hasDark = true;
-    this.hasLight = true;
-  }
-
-  public withoutDark(): ShadeOptions {
-    this.hasDark = false;
-    return this;
-  }
-
-  public withoutLight(): ShadeOptions {
-    this.hasLight = false;
-    return this;
   }
 }
