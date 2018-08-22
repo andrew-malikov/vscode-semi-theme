@@ -1,14 +1,11 @@
 {
-  "name": "semi-theme-builder",
-  "displayName": "Semi Theme Builder",
-  "description": "Simple Builder for Semi",
-  "version": "0.2.0",
+  "name": "vscode-theme-builder",
+  "displayName": "VsCode Theme Builder",
+  "description": "Simple Builder for VsCode",
+  "version": "0.2.2",
   "publisher": "markupCode",
   "license": "MIT",
   "scripts": {},
-  "categories": [
-    "Themes"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/markupcode/semi-material-theme"

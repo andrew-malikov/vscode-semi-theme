@@ -12,5 +12,6 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["./src/**/*"]
+  "include": ["./templates", "./colors"],
+  "exclude": ["./dist"]
 }
