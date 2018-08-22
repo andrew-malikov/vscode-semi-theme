@@ -1,49 +1,53 @@
 import Component from "../component";
 import { builder } from "../propertyBuilder";
 
+import { BaseType as base } from "../types/baseType";
+import { ComponentType as component } from "../types/componentType";
+import { StateType as state } from "../types/stateType";
+
 export default class Tab extends Component {
   public activeBackground = builder
     .setName("tab.activeBackground")
-    .addTypes("tab", "active", "background")
+    .addTypes(component.TAB, state.ACTIVE, base.BACKGROUND)
     .build();
 
   public activeForeground = builder
     .setName("tab.activeForeground")
-    .addTypes("tab", "active", "foreground")
+    .addTypes(component.TAB, state.ACTIVE, base.FOREGROUND)
     .build();
 
   public border = builder
     .setName("tab.border")
-    .addTypes("tab", "border")
+    .addTypes(component.TAB, base.BORDER)
     .build();
 
   public activeBorder = builder
     .setName("tab.activeBorder")
-    .addTypes("tab", "active", "border")
+    .addTypes(component.TAB, state.ACTIVE, base.BORDER)
     .build();
 
   public unfocusedActiveBorder = builder
     .setName("tab.unfocusedActiveBorder")
-    .addTypes("tab", "unfocused", "active", "border")
+    .addTypes(component.TAB, state.UNFOCUSED, state.ACTIVE, base.BORDER)
     .build();
 
   public inactiveBackground = builder
     .setName("tab.inactiveBackground")
-    .addTypes("tab", "inactive", "background")
+    .addTypes(component.TAB, state.INACTIVE, base.BACKGROUND)
     .build();
 
   public inactiveForeground = builder
     .setName("tab.inactiveForeground")
-    .addTypes("tab", "inactive", "foreground")
+    .addTypes(component.TAB, state.INACTIVE, base.FOREGROUND)
     .build();
 
   public unfocusedActiveForeground = builder
     .setName("tab.unfocusedActiveForeground")
-    .addTypes("tab", "unfocused", "active", "foreground")
+    .addTypes(component.TAB, state.UNFOCUSED, state.ACTIVE, base.FOREGROUND)
     .build();
 
   public unfocusedInactiveForeground = builder
     .setName("tab.unfocusedInactiveForeground")
-    .addTypes("tab", "unfocused", "inactive", "foreground")
+    .addTypes(component.TAB, state.UNFOCUSED, state.INACTIVE, base.FOREGROUND)
     .build();
 }

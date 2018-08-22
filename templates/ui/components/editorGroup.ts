@@ -2,10 +2,8 @@ import Component from "../component";
 import { builder } from "../propertyBuilder";
 
 import { BaseType as base } from "../types/baseType";
-import { ColorType as color } from "../types/colorType";
 import { ComponentType as component } from "../types/componentType";
 import { ExtraType as extra } from "../types/extraType";
-import { StateType as state } from "../types/stateType";
 
 export default class EditorGroup extends Component {
   public background = builder

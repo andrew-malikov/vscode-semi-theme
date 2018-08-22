@@ -1,234 +1,314 @@
 import Component from "../component";
 import { builder } from "../propertyBuilder";
 
+import { BaseType as base } from "../types/baseType";
+import { ColorType as color } from "../types/colorType";
+import { ComponentType as component } from "../types/componentType";
+import { ExtraType as extra } from "../types/extraType";
+import { StateType as state } from "../types/stateType";
+
 export default class Editor extends Component {
   public foreground = builder
     .setName("editor.foreground")
-    .addTypes("editor", "foreground")
+    .addTypes(component.EDITOR, base.FOREGROUND)
     .build();
 
   public background = builder
     .setName("editor.background")
-    .addTypes("editor", "background")
+    .addTypes(component.EDITOR, base.BACKGROUND)
     .build();
 
   public lineNumberForeground = builder
     .setName("editorLineNumber.foreground")
-    .addTypes("editor", "lineNumber", "foreground")
+    .addTypes(component.EDITOR, base.LINE_NUMBER, base.FOREGROUND)
     .build();
 
   public cursorForeground = builder
     .setName("editorCursor.foreground")
-    .addTypes("editor", "cursor", "foreground")
+    .addTypes(component.EDITOR, base.CURSOR, base.FOREGROUND)
     .build();
 
   public selectionBackground = builder
     .setName("editor.selectionBackground")
-    .addTypes("editor", "selection", "background")
+    .addTypes(component.EDITOR, base.SELECTION, base.BACKGROUND)
     .build();
 
   public selectionHighlightBackground = builder
     .setName("editor.selectionHighlightBackground")
-    .addTypes("editor", "selection", "highlight", "background")
+    .addTypes(
+      component.EDITOR,
+      base.SELECTION,
+      color.HIGHLIGHT,
+      base.BACKGROUND
+    )
     .build();
 
   public inactiveSelectionBackground = builder
     .setName("editor.inactiveSelectionBackground")
-    .addTypes("editor", "inactive", "selection", "background")
+    .addTypes(component.EDITOR, state.INACTIVE, base.SELECTION, base.BACKGROUND)
     .build();
 
   public wordHighlightBackground = builder
     .setName("editor.wordHighlightBackground")
-    .addTypes("editor", "word", "highlight", "background")
+    .addTypes(component.EDITOR, base.WORD, color.HIGHLIGHT, base.BACKGROUND)
     .build();
 
   public wordHighlightStrongBackground = builder
     .setName("editor.wordHighlightStrongBackground")
-    .addTypes("editor", "word", "highlight", "strong", "bacground")
+    .addTypes(component.EDITOR, base.WORD, color.HIGHLIGHT)
     .build();
 
   public findMatchBackground = builder
     .setName("editor.findMatchBackground")
-    .addTypes("editor", "find", "match", "background")
+    .addTypes(component.EDITOR, extra.FIND, extra.MATCH, base.BACKGROUND)
     .build();
 
   public findMatchHighlightBackground = builder
     .setName("editor.findMatchHighlightBackground")
-    .addTypes("editor", "find", "match", "highlight", "background")
+    .addTypes(
+      component.EDITOR,
+      extra.FIND,
+      extra.MATCH,
+      color.HIGHLIGHT,
+      base.BACKGROUND
+    )
     .build();
 
   public findRangeHighlightBackground = builder
     .setName("editor.findRangeHighlightBackground")
-    .addTypes("editor", "find", "range", "highlight", "background")
+    .addTypes(
+      component.EDITOR,
+      extra.FIND,
+      extra.RANGE,
+      color.HIGHLIGHT,
+      base.BACKGROUND
+    )
     .build();
 
   public hoverHighlightBackground = builder
     .setName("editor.hoverHighlightBackground")
-    .addTypes("editor", "hover", "highlight", "background")
+    .addTypes(component.EDITOR, state.HOVER, color.HIGHLIGHT, base.BACKGROUND)
     .build();
 
   public lineHighlightBackground = builder
     .setName("editor.lineHighlightBackground")
-    .addTypes("editor", "line", "highlight", "background")
+    .addTypes(component.EDITOR, base.LINE, color.HIGHLIGHT, base.BACKGROUND)
     .build();
 
   public lineHighlightBorder = builder
     .setName("editor.lineHighlightBorder")
-    .addTypes("editor", "line", "highlight", "background")
+    .addTypes(component.EDITOR, base.LINE, color.HIGHLIGHT, base.BACKGROUND)
     .build();
 
   public linkActiveForeground = builder
     .setName("editorLink.activeForeground")
-    .addTypes("editor", "link", "active", "foreground")
+    .addTypes(component.EDITOR, extra.LINK, state.ACTIVE, base.FOREGROUND)
     .build();
 
   public rangeHighlightBackground = builder
     .setName("editor.rangeHighlightBackground")
-    .addTypes("editor", "range", "highlight", "background")
+    .addTypes(component.EDITOR, extra.RANGE, color.HIGHLIGHT, base.BACKGROUND)
     .build();
 
   public whitespaceForeground = builder
     .setName("editorWhitespace.foreground")
-    .addTypes("editor", "whitespace", "foreground")
+    .addTypes(component.EDITOR, base.WHITESPACE, base.FOREGROUND)
     .build();
 
   public indentGuideBackground = builder
     .setName("editorIndentGuide.background")
-    .addTypes("editor", "indent", "guide", "background")
+    .addTypes(component.EDITOR, extra.INDENT, extra.GUIDE, base.BACKGROUND)
     .build();
 
   public rulerForeground = builder
     .setName("editorRuler.foreground")
-    .addTypes("editor", "ruler", "foreground")
+    .addTypes(component.EDITOR, extra.RULER, base.FOREGROUND)
     .build();
 
   public codeLensForeground = builder
     .setName("editorCodeLens.foreground")
-    .addTypes("editor", "codeLens", "foreground")
+    .addTypes(component.EDITOR, extra.CODE_LENS, base.FOREGROUND)
     .build();
 
   public bracketMatchBackground = builder
     .setName("editorBracketMatch.background")
-    .addTypes("editor", "bracket", "match", "background")
+    .addTypes(component.EDITOR, base.BRACKET, extra.MATCH, base.BACKGROUND)
     .build();
 
   public bracketMatchBorder = builder
     .setName("editorBracketMatch.border")
-    .addTypes("editor", "bracket", "match", "border")
+    .addTypes(component.EDITOR, base.BRACKET, extra.MATCH, base.BORDER)
     .build();
 
   public overviewRulerBorder = builder
     .setName("editorOverviewRuler.border")
-    .addTypes("editor", "overiew", "ruler", "border")
+    .addTypes(component.EDITOR, extra.OVERVIEW, extra.RULER, base.BORDER)
     .build();
 
   public overviewRulerFindMatchForeground = builder
     .setName("editorOverviewRuler.findMatchForeground")
-    .addTypes("editor", "overview", "ruler", "find", "match", "foreground")
+    .addTypes(
+      component.EDITOR,
+      extra.OVERVIEW,
+      extra.RULER,
+      extra.FIND,
+      extra.MATCH,
+      base.FOREGROUND
+    )
     .build();
 
   public overviewRulerRangeHighlightForeground = builder
     .setName("editorOverviewRuler.rangeHighlightForeground")
-    .addTypes("editor", "overview", "ruler", "range", "highlight", "foreground")
+    .addTypes(
+      component.EDITOR,
+      extra.OVERVIEW,
+      extra.RULER,
+      extra.RANGE,
+      color.HIGHLIGHT,
+      base.FOREGROUND
+    )
     .build();
 
   public overviewRulerSelectionHighlightForeground = builder
     .setName("editorOverviewRuler.selectionHighlightForeground")
     .addTypes(
-      "editor",
-      "overview",
-      "ruler",
-      "selection",
-      "highlight",
-      "foreground"
+      component.EDITOR,
+      extra.OVERVIEW,
+      extra.RULER,
+      base.SELECTION,
+      color.HIGHLIGHT,
+      base.FOREGROUND
     )
     .build();
 
   public overviewRulerWordHighlightForeground = builder
     .setName("editorOverviewRuler.wordHighlightForeground")
-    .addTypes("editor", "overview", "ruler", "word", "highlight", "foreground")
+    .addTypes(
+      component.EDITOR,
+      extra.OVERVIEW,
+      extra.RULER,
+      base.WORD,
+      color.HIGHLIGHT,
+      base.FOREGROUND
+    )
     .build();
 
   public overviewRulerWordHighlightStrongForeground = builder
     .setName("editorOverviewRuler.wordHighlightStrongForeground")
     .addTypes(
-      "editor",
-      "overview",
-      "ruler",
-      "word",
-      "highlight",
-      "strong",
-      "foreground"
+      component.EDITOR,
+      extra.OVERVIEW,
+      extra.RULER,
+      base.WORD,
+      color.HIGHLIGHT,
+      color.STRONG,
+      base.FOREGROUND
     )
     .build();
 
   public overviewRulerModifiedForeground = builder
     .setName("editorOverviewRuler.modifiedForeground")
-    .addTypes("editor", "overview", "ruler", "modified", "foreground")
+    .addTypes(
+      component.EDITOR,
+      extra.OVERVIEW,
+      extra.RULER,
+      state.MODIFIED,
+      base.FOREGROUND
+    )
     .build();
 
   public overviewRulerAddedForeground = builder
     .setName("editorOverviewRuler.addedForeground")
-    .addTypes("editor", "overview", "ruler", "added", "foreground")
+    .addTypes(
+      component.EDITOR,
+      extra.OVERVIEW,
+      extra.RULER,
+      state.ADDED,
+      base.FOREGROUND
+    )
     .build();
 
   public overviewRulerDeletedForeground = builder
     .setName("editorOverviewRuler.deletedForeground")
-    .addTypes("editor", "overview", "ruler", "deleted", "foreground")
+    .addTypes(
+      component.EDITOR,
+      extra.OVERVIEW,
+      extra.RULER,
+      state.DELETED,
+      base.FOREGROUND
+    )
     .build();
 
   public overviewRulerErrorForeground = builder
     .setName("editorOverviewRuler.errorForeground")
-    .addTypes("editor", "overview", "ruler", "error", "foreground")
+    .addTypes(
+      component.EDITOR,
+      extra.OVERVIEW,
+      extra.RULER,
+      color.ERROR,
+      base.FOREGROUND
+    )
     .build();
 
   public overviewRulerWarningForeground = builder
     .setName("editorOverviewRuler.warningForeground")
-    .addTypes("editor", "overview", "ruler", "warning", "foreground")
+    .addTypes(
+      component.EDITOR,
+      extra.OVERVIEW,
+      extra.RULER,
+      color.WARNING,
+      base.FOREGROUND
+    )
     .build();
 
   public overviewRulerInfoForeground = builder
     .setName("editorOverviewRuler.infoForeground")
-    .addTypes("editor", "overview", "ruler", "info", "foreground")
+    .addTypes(
+      component.EDITOR,
+      extra.OVERVIEW,
+      extra.RULER,
+      color.INFO,
+      base.FOREGROUND
+    )
     .build();
 
   public errorForeground = builder
     .setName("editorError.foreground")
-    .addTypes("editor", "error", "foreground")
+    .addTypes(component.EDITOR, color.ERROR, base.FOREGROUND)
     .build();
 
   public errorBorder = builder
     .setName("editorError.border")
-    .addTypes("editor", "error", "border")
+    .addTypes(component.EDITOR, color.ERROR, base.BORDER)
     .build();
 
   public warningForeground = builder
     .setName("editorWarning.foreground")
-    .addTypes("editor", "warning", "foreground")
+    .addTypes(component.EDITOR, color.WARNING, base.FOREGROUND)
     .build();
 
   public warningBorder = builder
     .setName("editorWarning.border")
-    .addTypes("editorWarning", "border")
+    .addTypes(component.EDITOR, color.WARNING, base.BORDER)
     .build();
 
   public gutterBackground = builder
     .setName("editorGutter.background")
-    .addTypes("editor", "gutter", "background")
+    .addTypes(component.EDITOR, extra.GUTTER, base.BACKGROUND)
     .build();
 
   public gutterModifiedBackground = builder
     .setName("editorGutter.modifiedBackground")
-    .addTypes("editor", "gutter", "modified", "background")
+    .addTypes(component.EDITOR, extra.GUTTER, state.MODIFIED, base.BACKGROUND)
     .build();
 
   public gutterAddedBackground = builder
     .setName("editorGutter.addedBackground")
-    .addTypes("editor", "gutter", "added", "background")
+    .addTypes(component.EDITOR, extra.GUTTER, state.ADDED, base.BACKGROUND)
     .build();
 
   public gutterDeletedBackground = builder
     .setName("editorGutter.deletedBackground")
-    .addTypes("editor", "gutter", "deleted", "background")
+    .addTypes(component.EDITOR, extra.GUTTER, state.DELETED, base.BACKGROUND)
     .build();
 }

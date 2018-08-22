@@ -10,6 +10,7 @@ export enum ComponentType {
   EDITOR = "editor",
   EDITOR_GROUP = "editorGroup",
   EDITOR_WIDGET = "editorWidget",
+  GIT = "git",
   GIT_DECORATION = "gitDecoration",
   INPUT = "input",
   LIST = "list",

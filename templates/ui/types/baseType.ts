@@ -7,6 +7,7 @@ export enum BaseType {
   HEADER = "header",
   LINE = "line",
   LINE_NUMBER = "lineNumber",
+  SECTION = "section",
   SELECTION = "selection",
   SHADOW = "shadow",
   SLIDER = "slider",

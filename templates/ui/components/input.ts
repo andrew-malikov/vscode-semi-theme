@@ -1,59 +1,65 @@
 import Component from "../component";
 import { builder } from "../propertyBuilder";
 
+import { BaseType as base } from "../types/baseType";
+import { ColorType as color } from "../types/colorType";
+import { ComponentType as component } from "../types/componentType";
+import { ExtraType as extra } from "../types/extraType";
+import { StateType as state } from "../types/stateType";
+
 export default class Input extends Component {
   public background = builder
     .setName("input.background")
-    .addTypes("input", "background")
+    .addTypes(component.INPUT, base.BACKGROUND)
     .build();
 
   public border = builder
     .setName("input.border")
-    .addTypes("input", "border")
+    .addTypes(component.INPUT, base.BORDER)
     .build();
 
   public foreground = builder
     .setName("input.foreground")
-    .addTypes("input", "foreground")
+    .addTypes(component.INPUT, base.FOREGROUND)
     .build();
 
   public placeholderForeground = builder
     .setName("input.placeholderForeground")
-    .addTypes("input", "placeholder", "foreground")
+    .addTypes(component.INPUT, extra.PLACEHOLDER, base.FOREGROUND)
     .build();
 
   public activeBorder = builder
     .setName("inputOption.activeBorder")
-    .addTypes("input", "active", "border")
+    .addTypes(component.INPUT, state.ACTIVE, base.BORDER)
     .build();
 
   public infoBackground = builder
     .setName("inputValidation.infoBackground")
-    .addTypes("input", "validation", "info", "background")
+    .addTypes(component.INPUT, extra.VALIDATION, color.INFO, base.BACKGROUND)
     .build();
 
   public infoBorder = builder
     .setName("inputValidation.infoBorder")
-    .addTypes("input", "validation", "info", "border")
+    .addTypes(component.INPUT, extra.VALIDATION, color.INFO, base.BORDER)
     .build();
 
   public warningBackground = builder
     .setName("inputValidation.warningBackground")
-    .addTypes("input", "validation", "warning", "background")
+    .addTypes(component.INPUT, extra.VALIDATION, color.WARNING, base.BACKGROUND)
     .build();
 
   public warningBorder = builder
     .setName("inputValidation.warningBorder")
-    .addTypes("input", "validation", "warning", "border")
+    .addTypes(component.INPUT, extra.VALIDATION, color.WARNING, base.BORDER)
     .build();
 
   public errorBackground = builder
     .setName("inputValidation.errorBackground")
-    .addTypes("input", "validation", "error", "background")
+    .addTypes(component.INPUT, extra.VALIDATION, color.ERROR, base.BACKGROUND)
     .build();
 
   public errorBorder = builder
     .setName("inputValidation.errorBorder")
-    .addTypes("input", "validation", "error", "border")
+    .addTypes(component.INPUT, extra.VALIDATION, color.ERROR, base.BORDER)
     .build();
 }

@@ -1,29 +1,33 @@
 import Component from "../component";
 import { builder } from "../propertyBuilder";
 
+import { BaseType as base } from "../types/baseType";
+import { ComponentType as component } from "../types/componentType";
+import { StateType as state } from "../types/stateType";
+
 export default class GitDecoration extends Component {
   public modifiedResourceForeground = builder
     .setName("gitDecoration.modifiedResourceForeground")
-    .addTypes("git", "decoration", "")
+    .addTypes(component.GIT_DECORATION, state.MODIFIED, base.FOREGROUND)
     .build();
 
   public deletedResourceForeground = builder
     .setName("gitDecoration.deletedResourceForeground")
-    .addTypes("git", "decoration", "deleted", "resource", "foreground")
+    .addTypes(component.GIT_DECORATION, state.DELETED, base.FOREGROUND)
     .build();
 
   public untrackedResourceForeground = builder
     .setName("gitDecoration.untrackedResourceForeground")
-    .addTypes("git", "decoration", "untracked", "resource", "foreground")
+    .addTypes(component.GIT_DECORATION, state.UNTRACKED, base.FOREGROUND)
     .build();
 
   public ignoredResourceForeground = builder
     .setName("gitDecoration.ignoredResourceForeground")
-    .addTypes("git", "decoration", "ignored", "resource", "foreground")
+    .addTypes(component.GIT_DECORATION, state.IGNORED, base.FOREGROUND)
     .build();
 
   public conflictingResourceForeground = builder
     .setName("gitDecoration.conflictingResourceForeground")
-    .addTypes("git", "decoration", "conflicting", "resource", "foreground")
+    .addTypes(component.GIT_DECORATION, state.CONFLICTING, base.FOREGROUND)
     .build();
 }
