@@ -15,7 +15,7 @@ export default class UiTemplate implements Serializeable {
   public toList(): Property[] {
     const props = new Array<Property>();
 
-    this.components.forEach((value, key) => {
+    this.components.forEach(value => {
       props.push(...value.toList());
     });
 
