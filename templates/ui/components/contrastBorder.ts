@@ -1,6 +1,5 @@
 import Component from "../component";
-import Property from "../property";
-import { builder } from "../propertyBuilder";
+import { builder } from "../uiPropertyBuilder";
 
 import { BaseType as base } from "../types/baseType";
 import { ColorType as color } from "../types/colorType";

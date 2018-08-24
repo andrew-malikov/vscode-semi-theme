@@ -1,6 +1,6 @@
 import Serializeable from "../serializeable";
 import Component from "./component";
-import Property from "./property";
+import UiProperty from "./uiProperty";
 
 export default class UiTemplate implements Serializeable {
   private _comps: Map<string, Component>;
@@ -12,8 +12,8 @@ export default class UiTemplate implements Serializeable {
     this._comps = components;
   }
 
-  public toList(): Property[] {
-    const props = new Array<Property>();
+  public toList(): UiProperty[] {
+    const props = new Array<UiProperty>();
 
     this.components.forEach(value => {
       props.push(...value.toList());

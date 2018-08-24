@@ -1,5 +1,5 @@
 import Component from "../component";
-import Property from "../property";
+import UiProperty from "../uiProperty";
 import Rule from "./rule";
 
 export function applyToComponents(rules: Rule[], ...components: Component[]) {
@@ -8,13 +8,13 @@ export function applyToComponents(rules: Rule[], ...components: Component[]) {
   });
 }
 
-export function applyToProperties(rules: Rule[], ...props: Property[]) {
+export function applyToProperties(rules: Rule[], ...props: UiProperty[]) {
   props.forEach(property => {
     applyToProperty(rules, property);
   });
 }
 
-function applyToProperty(rules: Rule[], property: Property) {
+function applyToProperty(rules: Rule[], property: UiProperty) {
   rules.forEach(rule => {
     if (property.contains(rule.types)) property.color = rule.color;
   });

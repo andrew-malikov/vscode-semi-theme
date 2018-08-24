@@ -1,6 +1,6 @@
 import { Instance as ColorValue } from "tinycolor2";
 
-export default class Property {
+export default class UiProperty {
   public name: string;
   public types: string[];
   public color: ColorValue;

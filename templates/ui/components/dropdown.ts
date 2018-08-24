@@ -1,5 +1,5 @@
 import Component from "../component";
-import { builder } from "../propertyBuilder";
+import { builder } from "../uiPropertyBuilder";
 
 import { BaseType as base } from "../types/baseType";
 import { ComponentType as component } from "../types/componentType";

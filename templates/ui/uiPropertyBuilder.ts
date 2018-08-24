@@ -1,8 +1,8 @@
 import { Instance as ColorValue } from "tinycolor2";
-import Property from "./property";
+import UiProperty from "./uiProperty";
 
-export default class PropertyBuilder {
-  private property: Property;
+export default class UiPropertyBuilder {
+  private property: UiProperty;
 
   constructor() {
     this.reset();
@@ -24,10 +24,10 @@ export default class PropertyBuilder {
   }
 
   public reset() {
-    this.property = new Property();
+    this.property = new UiProperty();
   }
 
-  public build(): Property {
+  public build(): UiProperty {
     const property = this.property;
     this.reset();
     return property;
@@ -38,4 +38,4 @@ export default class PropertyBuilder {
   }
 }
 
-export const builder = new PropertyBuilder();
+export const builder = new UiPropertyBuilder();

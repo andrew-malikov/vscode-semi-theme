@@ -1,8 +1,8 @@
-import Property from "./property";
+import UiProperty from "./uiProperty";
 
 export default class Component {
-  public toList(): Property[] {
-    const props = new Array<Property>();
+  public toList(): UiProperty[] {
+    const props = new Array<UiProperty>();
     const object = this as any;
 
     for (const key in object)
