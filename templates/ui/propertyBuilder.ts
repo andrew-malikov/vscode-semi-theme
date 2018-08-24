@@ -19,7 +19,7 @@ export default class PropertyBuilder {
   }
 
   public addTypes(...type: string[]): this {
-    this.property.type.push(...type);
+    this.property.types.push(...type);
     return this.next();
   }
 

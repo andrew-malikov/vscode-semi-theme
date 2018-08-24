@@ -6,7 +6,7 @@ export enum ExtraType {
   FIND = "find",
   FOLDER = "folder",
   GUIDE = "guide",
-  GUTTER = "GUTTER",
+  GUTTER = "gutter",
   INDENT = "ident",
   LINK = "link",
   MATCH = "match",
