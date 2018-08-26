@@ -13,8 +13,10 @@ export default class Color {
     return this.values["base"];
   }
 
-  constructor(value: string) {
+  constructor(value: string | ColorValue) {
+    if (typeof value === "string") value = ColorValueBuilder(value);
     this._values = new Map<string, ColorValue>();
+    this.values["base"] = value;
   }
 
   public add(key: string, value: string | ColorValue) {

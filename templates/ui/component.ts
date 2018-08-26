@@ -3,10 +3,9 @@ import UiProperty from "./uiProperty";
 export default class Component {
   public toList(): UiProperty[] {
     const props = new Array<UiProperty>();
-    const object = this as any;
 
-    for (const key in object)
-      if (typeof object[key] === typeof object) props.push(object[key]);
+    for (const key in this)
+      if (this[key] instanceof UiProperty) props.push(this[key] as any);
 
     return props;
   }

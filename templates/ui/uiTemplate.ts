@@ -26,7 +26,7 @@ export default class UiTemplate implements Serializeable {
     const props = new Map();
 
     this.toList().forEach(value => {
-      props.set(value.name, value.color.toString());
+      props.set(value.name, value.color.toHexString());
     });
 
     return JSON.stringify(props);
